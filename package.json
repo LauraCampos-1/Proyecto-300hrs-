@@ -1,0 +1,17 @@
+{
+  "name": "claaran-400hrs",
+  "version": "1.0.0",
+  "description": "Clasificacion arancelaria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "multer",
+    "jwt"
+  ],
+  "author": "Laura Campos <lauracampos14092015@gmail.com>",
+  "license": "ISC"
+}
