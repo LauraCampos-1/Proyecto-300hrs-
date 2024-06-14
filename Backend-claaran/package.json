@@ -4,7 +4,7 @@
   "description": "Clasificacion arancelaria",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --env-file .env --watch ./src/index.js"
   },
   "keywords": [
     "node",
@@ -13,5 +13,9 @@
     "jwt"
   ],
   "author": "Laura Campos <lauracampos14092015@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  }
 }
