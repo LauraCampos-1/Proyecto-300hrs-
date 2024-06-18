@@ -1,0 +1,167 @@
+/* Aqui inicia estilos del header */
+.header-container{
+    display: flex;
+    align-items: center;
+    padding: 1rem;  
+  }
+  .img-logo {
+    width: 200px;
+  }
+  
+  .menu {
+    flex-basis: 100%;
+  }
+  
+  
+  /* Oculta la lista del menú por defecto */
+  .menu-list {
+    display: none;
+  }
+  
+  /* Muestra la lista del menú cuando el checkbox está marcado */
+  .menu-toggle:checked ~ .menu-list {
+    display: block;
+  }
+  
+  /* Oculta el input asociado al label que despliega el icono del menu hamburguesa */
+  .visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+  }
+  
+  /* Estilos generales del menú */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+  .menu-icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .menu-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 2rem;
+    justify-content: end;
+    position: absolute;
+    top: 69px;
+    left: 0;
+    gap: 0;
+    width: 100%;
+  }
+  
+  .menu-item {
+    background: white;
+    padding: .5rem 1.6rem;
+    border-bottom: 1px solid #42a5ff;
+    text-align: center;
+  }
+  
+  .menu-list .menu-item a {
+    display: block;
+    text-decoration: none;
+  }
+  
+  /* .sub-menu .menu-item {
+      border: 1px dotted blue;
+      box-sizing: border-box;
+  }
+  .sub-menu .menu-item .sub-menu {
+     background-color: orange;
+  } */
+  
+  /* Estilos para dispositivos móviles */
+  @media screen and (max-width: 767px) {
+    /* Disposición vertical */
+    
+    .menu {
+      flex-direction: column;
+    }
+    
+    /* Estilos para el botón de menú */
+  
+    
+    .menu-list {
+      display: none;
+      overflow: auto;
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+    
+    .menu-toggle:checked ~ .menu-list {
+      display: flex;
+    }
+    
+    /* Estilos para submenús */
+    .sub-menu {
+      display: none;
+    }
+    
+    .menu-item:hover .sub-menu {
+      display: flex;
+      flex-direction: column;
+      position: static;
+    }
+  }
+  
+  /* Estilos para dispositivos de escritorio */
+  @media screen and (min-width: 768px) {
+    /* Disposición horizontal */
+    .menu {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-icon {
+      display: none;
+      justify-content: end;
+      align-items: center;
+    }
+    
+    /* Estilos para el botón de menú */
+    .menu-toggle {
+      display: none;
+    }
+    
+  
+    .menu-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      top: auto;
+    }
+  
+    .menu-item {
+      background: white;
+      border-bottom: 1px solid white;
+    }
+    
+    /* Estilos para submenús */
+    .sub-menu {
+      position: absolute;
+      z-index: 1;
+      display: none;
+      padding: 0;
+    }
+    
+    .menu-item:hover .sub-menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+    }
+  }
+  /* Aqui finaliza estilos del header */

@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+  }
+  
+  .contenedor {
+    border: 1px solid;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  
+  .logo {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contenedor_image {
+    width: 14rem;
+    padding: 2rem;
+  }
+  
+  .login {
+  
+    background-color: #42a5ff;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bienvenidos {
+    width: 80%;
+    font-size: large;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+  
+  form.formulario {
+    width: 30%;
+  }
+  
+  .campo {
+    margin: 0.7rem 0;
+  }
+  
+  .campo input {
+    width: 97%;
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+  #link-enviar{
+    text-decoration: none;
+    color: black;
+  }
+  @media(min-width: 768px) {
+    .contenedor {
+      flex-direction: row;
+    }
+  
+  
+    form.formulario {
+      margin: 2rem auto;
+    }
+  
+    .bienvenidos {
+      width: 80%;
+      align-content: center;
+      font-size: xx-large;
+    }
+  
+    p.font {
+      font-family: 'Montserrat';
+      font-size: large;
+    }
+  }
+  
+  @media(min-width:992px) {
+    .contenedor_image {
+      width: 22rem;
+      padding: 0rem;
+    }
+  }
