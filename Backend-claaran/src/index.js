@@ -18,6 +18,6 @@ app.use( '/api/descriptions', require( './routes/description.routes'))
 dbConnection();
 
 /* / Lanzamos el servidor web */
-app.listen( PORT, function() {
+app.listen( 3001, function() {
     console.log( `servidor corriendo en http://localhost:${PORT}`);
 });
