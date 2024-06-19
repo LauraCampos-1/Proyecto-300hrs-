@@ -1,0 +1,28 @@
+ /* main: section.section-about*/
+  
+ /* section.section-about {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    bottom: 0;
+    position: relative; */
+    /* width: 100vw; */
+/* }
+
+.content-about {
+    background: #42A5FF;
+    padding: 2.6rem 1.2rem 1.2rem 1.2rem;
+    text-align: justify;
+}
+.section-about .content-about {
+    flex-basis: 60%;
+    height: 440px;
+    position: relative;
+}
+.section-about .image-about {
+    flex-basis: 40%;
+    height: 320px;
+    width: 100%;
+    flex-direction: column;
+} */
+
