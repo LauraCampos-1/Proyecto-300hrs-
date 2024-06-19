@@ -1,0 +1,44 @@
+
+.contenedor{
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+    
+}
+h3{
+  text-align: center;  
+  font-size:large ;
+}
+
+.titulo {
+    height: 2rem;
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+    background-color: #87CEFA;
+    margin-top: 1rem;
+    margin-block-end: 1rem;
+    border-radius: 1rem;
+}
+.form {
+    width: 40%;
+    margin: 0 auto;
+
+}
+
+label {
+
+    display: block;
+}
+
+
+.register{
+    height: 2rem;
+    width: 40%;
+    margin: 0 auto;
+    display: block;
+    background-color: #87CEFA;
+    margin-top: 1rem;
+    margin-block-end: 1rem;
+    border-radius: 1rem;
+}

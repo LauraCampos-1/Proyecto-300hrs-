@@ -13,7 +13,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     WebsiteComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
