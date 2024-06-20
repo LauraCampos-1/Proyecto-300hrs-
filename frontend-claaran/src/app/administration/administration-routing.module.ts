@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '',
     component: AdministrationComponent,
     children: [
-      {path: 'creacionref', component: CreacionDeReferenciasComponent},
+      {path: 'creacion-referencias', component: CreacionDeReferenciasComponent},
     ]
   }
 ];

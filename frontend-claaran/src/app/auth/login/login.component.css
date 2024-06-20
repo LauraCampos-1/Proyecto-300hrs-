@@ -67,6 +67,7 @@ body {
     text-decoration: none;
     color: black;
   }
+
   @media(min-width: 768px) {
     .contenedor {
       flex-direction: row;

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+small.error {
+    font-size: 14px;
+    font-style: italic;
+    color: red;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+}
