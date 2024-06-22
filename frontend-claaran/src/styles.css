@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -1214,3 +1215,18 @@ input.container__button {
     }
     
 }
+=======
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(/public/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+small.error {
+    font-family: 'Montserrat-Regular';
+    position: absolute;
+    font-size: 14px;
+    color: red;
+    margin: 0;
+    padding: 0;
+    height: 14px;
+}
+>>>>>>> 0aab7c4afba4b6bc3fc51699c6c1d7a6c154fa88

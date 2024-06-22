@@ -1,9 +1,10 @@
-const { insertarProducto, obtenerProductos, obtenerUnProductoPorId, actualizarUnProductoCompleto } = require("../services/product.service");
+const { insertarProducto, obtenerProductos, obtenerUnProductoPorId, actualizarUnProductoCompleto, obtenerUnProductoPorPosArancelId } = require("../services/product.service");
 
 
 async function createProduct (req, res){
     const product = req.body;
     try {
+
         const newProduct = await insertarProducto(product)
         res.json({
             ok:true,
@@ -48,6 +49,25 @@ async function getProductById (req, res){
         })
     }
 }
+
+async function getProductByArancelId(req, res){
+    const id = req.params.id;
+    try {
+        const data = await obtenerUnProductoPorPosArancelId( id );
+        res.json({
+            ok:true,
+            data
+        }) 
+    } catch (error) {
+        console.error(error)
+        res.json({
+            ok:false,
+            msg:'Error al obtener un producto por su ArancelID'
+        })
+    }
+}
+
+
 async function updateProductComplete (req, res){
     const id = req.params.id;
     const data = req.body;
@@ -70,5 +90,6 @@ module.exports={
     createProduct,
     getAllProducts,
     getProductById,
-    updateProductComplete
+    updateProductComplete,
+    getProductByArancelId
 }
