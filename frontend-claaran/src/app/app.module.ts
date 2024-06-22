@@ -4,17 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WebsiteModule } from './website/website.module';
-import { HomeComponent } from './website/pages/home/home.component';
+import { footerComponent   } from './website/components/shared/footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './website/components/header/header.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    // HomeComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WebsiteModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

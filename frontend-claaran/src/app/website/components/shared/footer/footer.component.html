@@ -1,4 +1,7 @@
-<footer class="footer">
+<form class="footer"
+[formGroup]="footerForm"
+(ngSubmit)="onSubmit()"
+>
     <div class="contenedor">
         <div class="container__contact">
             <p class="contact__contact-text">
@@ -38,21 +41,21 @@
             <form action="">
                 <div class="container__input">
                     <label for="name">Nombre</label>
-                    <input type="text" id="name">
+                    <input type="text"  form id="name" formControlName="nombre">
                 </div>
                 
                 <div class="container__input">
                     <label for="phone">Telefono</label>
-                    <input type="text" id="phone">
+                    <input type="text"  form id="phone" formControlName="telefono">
                 </div>
                 
                 <div class="container__input">
                     <label for="email">E-mail</label>
-                    <input class="container__input" type="text" id="email">
+                    <input class="cont  formainer__input" type="text" id="email" formControlName="email">
                 </div>
                 <div class="container__input">
 
-                    <input class="container__button" type="submit">
+                    <input class="cont  formainer__button" type="submit">
                 </div>
 
             </form>
@@ -62,4 +65,4 @@
     </div>
 
 
-</footer>
+</form>

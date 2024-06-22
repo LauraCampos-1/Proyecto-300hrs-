@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { WebsiteComponent } from './website.component';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
+/* import { FooterComponent } from './components/shared/footer/footer.component'; */
 import { HeaderComponent } from './components/header/header.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ServicesComponent } from './components/services/services.component';
 import { HomeComponent } from './pages/home/home.component';
+import { footerComponent } from './components/shared/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
   declarations: [
     WebsiteComponent,
     NavbarComponent,
-    FooterComponent,
+    footerComponent,
     HeaderComponent,
     AboutUsComponent,
     ServicesComponent,
@@ -23,7 +25,8 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   imports: [
     CommonModule,
-    WebsiteRoutingModule
+    WebsiteRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class WebsiteModule { }
