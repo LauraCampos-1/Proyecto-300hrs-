@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreacionDeReferenciasComponent } from './components/creacion-de-referencias/creacion-de-referencias.component';
 import { AdministrationRoutingModule } from './administration-routing.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +19,7 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     AppRoutingModule,
     AdministrationRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministrationModule { }

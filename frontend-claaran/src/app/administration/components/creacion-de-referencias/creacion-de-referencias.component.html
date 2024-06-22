@@ -1,81 +1,63 @@
-<body>
 
-    <div class="contenedor">
-        <label for="" class="label label-products">Referencia</label>
-        <input type="text" class="form-control" >   
-    </div>    
+<form 
+    action="" class="form form-product"
+    [formGroup]="CreacionDeReferencias"
+    (ngSubmit)="onSubmit()"
+>
+<div class="contenedor">
+    <label for="" class="label label-products">Referencia</label>
+    <input type="text" class="form-control" formControlName="ref" >   
+</div>    
 
-    <div class="contenedor">
-        <label for="" class="label label-products">Sub partida arancelaria</label>
-        <input type="text" class="form-control" >   
-    </div>    
+<div class="contenedor">
+    <label for="" class="label label-products">Sub partida arancelaria</label>
+    <input type="text" class="form-control" formControlName="subarancel"  >   
+</div>    
 
-    <div class="contenedor">
-        <label for="" class="label label-products">Arancel</label>
-        <input type="text" class="form-control" >   
-    </div>    
+<div class="contenedor">
+    <label for="" class="label label-products">Arancel</label>
+    <input type="text" class="form-control" formControlName="arancel" >   
+</div>    
 
-    <div class="contenedor">
-        <label for="" class="label label-products">IVA</label>
-        <input type="text" class="form-control" >   
-    </div>    
+<div class="contenedor">
+    <label for="" class="label label-products">IVA</label>
+    <input type="text" class="form-control" formControlName="iva" >   
+</div>    
 
-    <div class="titulo"><h3>Descripciones minimas</h3></div>
+<div class="titulo"><h3>Descripciones minimas</h3></div>
 
-    <form action="" class="form form-product">
-    <div class="field">
-        <label for="" class="label label-products">Producto</label>
-        <input type="text" class="form-control" >   
-    </div>
-    <div class="field">
-        <label for="" class="label label-productsq">Marca</label>
-        <input type="text" class="form-control" >  
-    </div>
-    <div class="field">
-        <label for="" class="label label-products">Modelo</label>
-        <input type="text" class="form-control" >  
-    </div>
-    
-    <div class="field">
-        <label for="" class="label label-products">Referencia</label>
-        <input type="text" class="form-control" formControlName="urlImage">
-    </div>
 
-    <div class="field">
-        <label for="" class="label label-products">Serial</label>
-        <input type="text" class="form-control" formControlName="urlImage">
-    </div>
+<div class="field">
+    <label for="" class="label label-products">Producto</label>
+    <input type="text" class="form-control" formControlName="producto" >   
+</div>
+<div class="field">
+    <label for="" class="label label-productsq">Marca</label>
+    <input type="text" class="form-control" formControlName="marca" >  
+</div>
+<div class="field">
+    <label for="" class="label label-products">Modelo</label>
+    <input type="text" class="form-control" formControlName="modelo" >  
+</div>
 
-    
-    <div class="field">
-        <label for="" class="label label-products">Uso o Destino</label>
-        <input type="text" class="form-control" formControlName="urlImage"> 
-    </div>
+<div class="field">
+    <label for="" class="label label-products">Referencia</label>
+    <input type="text" class="form-control" formControlName="referencia" >
+</div>
 
-    <div class="field">
-        <label for="" class="label label-products">Clase de  la pantalla</label>
-        <input type="text" class="form-control" formControlName="urlImage"> 
-    </div>
+<div class="field">
+    <label for="" class="label label-products">Serial</label>
+    <input type="text" class="form-control" formControlName="serial" >
+</div>
 
-    <div class="field">
-        <label for="" class="label label-products">Tamaño de la pantalla</label>
-        <input type="text" class="form-control" formControlName="urlImage"> 
-    </div>
 
-    <div class="field">
-        <label for="" class="label label-products">Resolucion</label>
-        <input type="text" class="form-control" formControlName="urlImage"> 
-    </div>
+<div class="field">
+    <label for="" class="label label-products">Uso o Destino</label>
+    <input type="text" class="form-control" formControlName="usod " > 
+</div>
 
-    <div class="field">
-        <label for="" class="label label-products">Tipo de control</label>
-        <input type="text" class="form-control" formControlName="urlImage"> 
-    </div>
 
-    <div class="botom">
-        <button type="submit" class="register">Registrar</button>
-    </div>
+<div class="botom">
+    <button type="submit" class="register">Registrar</button>
+</div>
 
-</form>
-
-</body>

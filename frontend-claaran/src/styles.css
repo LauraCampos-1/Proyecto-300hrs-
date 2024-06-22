@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(/public/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
 small.error {
+    font-family: 'Montserrat-Regular';
+    position: absolute;
     font-size: 14px;
-    font-style: italic;
     color: red;
     margin: 0;
     padding: 0;
-    height: 30px;
+    height: 14px;
 }

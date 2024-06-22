@@ -47,12 +47,12 @@ body {
     font-style: normal;
   }
   
-  form.formulario {
+/*   form.formulario {
     width: 30%;
-  }
-  
+  } 
+   */
   .campo {
-    margin: 0.7rem 0;
+    margin: 1rem ;
   }
   
   .campo input {

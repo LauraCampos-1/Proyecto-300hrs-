@@ -12,6 +12,10 @@ async function obtenerUnProductoPorId( idProducto ) {
     return await ProductModel.findOne({ _id: idProducto });
 }
 
+async function obtenerUnProductoPorPosArancelId( posArancelId ) {
+    return await ProductModel.findOne({ PosArancelId: posArancelId });
+}
+
 
 async function actualizarUnProductoCompleto( _id, dataActualizada ) {
     return await ProductModel.findOneAndUpdate(
@@ -27,5 +31,6 @@ module.exports = {
     insertarProducto,
     obtenerProductos,
     obtenerUnProductoPorId,
-    actualizarUnProductoCompleto
+    actualizarUnProductoCompleto,
+    obtenerUnProductoPorPosArancelId
 }

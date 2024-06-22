@@ -22,7 +22,7 @@
                 <div
                   *ngIf="loginForm.get( 'usuario' )?.invalid && ( loginForm.get( 'usuario' )?.dirty || loginForm.get( 'usuario' )?.touched )"
                 >
-                  <small *ngIf="loginForm.get( 'usuario' )?.errors?.['required']">El campo usuario es requerido</small>
+                  <small class="error" *ngIf="loginForm.get( 'usuario' )?.errors?.['required']">El campo usuario es requerido</small>
               </div>
               </div>
           </div>
@@ -32,7 +32,7 @@
                 <div
                   *ngIf="loginForm.get( 'contrasena' )?.invalid && ( loginForm.get( 'contrasena' )?.dirty || loginForm.get( 'contrasena' )?.touched )"
                 >
-                  <small *ngIf="loginForm.get( 'contrasena' )?.errors?.['required']">El campo conrtraseña es requerido</small>
+                  <small class="error" *ngIf="loginForm.get( 'contrasena' )?.errors?.['required']">El campo conrtraseña es requerido</small>
               </div>
               </div>
           </div>
@@ -45,4 +45,4 @@
         </div>
         </div>
       </div>
-  
+        
