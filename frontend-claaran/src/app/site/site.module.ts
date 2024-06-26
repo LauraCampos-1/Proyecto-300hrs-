@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreditsComponent } from './pages/credits/credits.component';
 import { FooterComponent } from '../components/layout/footer/footer.component';
 import { NavbarComponent } from '../components/layout/navbar/navbar.component';
+import { OurServicesComponent } from './pages/our-services/our-services.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavbarComponent } from '../components/layout/navbar/navbar.component';
     HomeComponent,
     CreditsComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    OurServicesComponent
   ],
   imports: [
     CommonModule,

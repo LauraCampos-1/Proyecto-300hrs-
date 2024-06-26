@@ -2,17 +2,18 @@
     <div class="container container-sm container-md container-lg header-container">
 
         <div class="logo">
-            <img class="img-logo" src="assets/images/claaran-logo.png" alt="logo-claaran"></div>
-        <div class="menu">    <nav class="menu">
+            <a routerLink="/">
+              <img class="img-logo" src="assets/images/claaran-logo.png" alt="logo-claaran">
+            </a>
+        </div>
+        <div class="menu">
+          <nav class="menu">
             <input type="checkbox" id="menu-toggle" class="menu-toggle visually-hidden">
             <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <ul class="menu-list">
-              <li class="menu-item"><a href="#">Inicio</a></li>
-              <li class="menu-item"><a href="#about">Acerca de Nosotros</a>
-
-              </li>
-              <!-- <li class="menu-item"><a href="#servicios">Servicios</a></li> -->
-              <li class="menu-item"><a routerLink="/login">Servicios</a></li>
+              <li class="menu-item"><a routerLink="/about-us">Acerca de Nosotros</a></li>
+              <li class="menu-item"><a routerLink="/our-services">Servicios</a></li>
+              <li class="menu-item"><a routerLink="/credits">Créditos</a></li>
             </ul>
           </nav>
         </div>
