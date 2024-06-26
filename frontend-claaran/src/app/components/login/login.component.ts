@@ -35,7 +35,7 @@ export class LoginComponent {
       })
     }
 
-    
+
   }
 
   // navigateToReferences(event: Event) {
