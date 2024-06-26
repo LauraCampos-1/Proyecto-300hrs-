@@ -5,6 +5,9 @@ import { HomeComponent } from './components/home/home.component';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdministrationModule } from '../administration/administration.module';
 
 
 
@@ -13,10 +16,16 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     WebsiteComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
+    WebsiteRoutingModule,
+    ReactiveFormsModule,
+    AdministrationModule
+  ],
+  exports: [
     WebsiteRoutingModule
   ]
 })
