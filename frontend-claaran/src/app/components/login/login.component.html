@@ -1,0 +1,48 @@
+
+  <div class="contenedor">
+    <div class="logo">
+        <img class="contenedor_image" src="assets/images/claaran-logo.png" alt="logo claarant">
+    </div>
+      <div class="login">
+        <div class="bienvenidos">
+          <h2>BIENVENIDOS</h2>
+          <p class="font">
+            Estamos para acompañarte y asegurarnos que no tengas ningún incoveniente con el uso de nuestros sistema. Queremos brindarte una experiencia excepcional desde el primer momento en que ingreses
+          </p>
+
+
+          <form
+            class="formulario"
+            [formGroup]="loginForm"
+            (ngSubmit)="onSubmit()"
+          >
+          <div class="campo">
+              <input type="text" placeholder="Usuario" formControlName="username">
+              <div class="error">
+                <div
+                  *ngIf="loginForm.get( 'usuario' )?.invalid && ( loginForm.get( 'usuario' )?.dirty || loginForm.get( 'usuario' )?.touched )"
+                >
+                  <small class="error" *ngIf="loginForm.get( 'usuario' )?.errors?.['required']">El campo usuario es requerido</small>
+              </div>
+              </div>
+          </div>
+          <div class="campo">
+              <input type="password" placeholder="Contraseña" formControlName="password">
+              <div class="error">
+                <div
+                  *ngIf="loginForm.get( 'contrasena' )?.invalid && ( loginForm.get( 'contrasena' )?.dirty || loginForm.get( 'contrasena' )?.touched )"
+                >
+                  <small class="error" *ngIf="loginForm.get( 'contrasena' )?.errors?.['required']">El campo conrtraseña es requerido</small>
+              </div>
+              </div>
+          </div>
+            <div class="campo button" >
+              <button type="submit" [disabled]="loginForm.invalid">Enviar</button>   
+            </div>    
+          </form>
+
+
+        </div>
+        </div>
+      </div>
+        
