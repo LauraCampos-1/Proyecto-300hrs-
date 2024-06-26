@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { FooterService } from '../../../../services/footer.service';
+import { FooterService } from '../../../services/footer.service';
+
 
 @Component({
-  selector: 'app-footer',
+  selector: 'layout-footer',
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css'
 })
-export class footerComponent {
+export class FooterComponent {
   footerForm!: FormGroup;
   @Output()  registroCreado = new EventEmitter <any>();
 

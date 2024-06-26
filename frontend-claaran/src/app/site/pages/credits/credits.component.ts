@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-credits',
+  selector: 'site-credits',
   templateUrl: './credits.component.html',
   styleUrl: './credits.component.css'
 })

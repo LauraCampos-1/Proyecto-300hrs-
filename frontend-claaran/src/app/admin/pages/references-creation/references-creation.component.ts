@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-references-creation',
+  selector: 'admin-references-creation',
   templateUrl: './references-creation.component.html',
   styleUrl: './references-creation.component.css'
 })

@@ -1,0 +1,11 @@
+/* Opcional: Estilo para la variable --host-height */
+
+:host {
+  border: var( --host-border-width ) var( --host-border-style ) var( --host-border-color );
+  box-sizing: border-box;
+  display: flex;
+  margin-top: var( --host-margin-top );
+  flex-direction: column;
+}
+
+

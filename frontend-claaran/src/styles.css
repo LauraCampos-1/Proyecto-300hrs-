@@ -1,10 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --host-margin-top: 8rem; /* Valor inicial de la altura del host */
+  --host-border-color: transparent;
+  --host-border-style: dotted;
+  --host-border-width: 1px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 /* header */
+
 
 /* Aqui inicia estilos del header */
 .header-container{
