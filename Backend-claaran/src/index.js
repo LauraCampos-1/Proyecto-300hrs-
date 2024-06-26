@@ -13,6 +13,7 @@ app.use( cors() );
 /* / Definimos las rutas disponibles */ 
 app.use( '/api/products', require( './routes/product.routes' ) );       // -> http://localhost:4000/api/products
 app.use( '/api/descriptions', require( './routes/description.routes'))
+app.use( '/api/contacts',require('./routes/contact.routes'));
 
 // Invoca la configuracion de la base de datos para establecer la conexion
 dbConnection();

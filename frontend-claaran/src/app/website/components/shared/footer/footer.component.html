@@ -1,6 +1,5 @@
 <form class="footer"
 [formGroup]="footerForm"
-(ngSubmit)="onSubmit()"
 >
     <div class="contenedor">
         <div class="container__contact">
@@ -9,7 +8,7 @@
             </p>
             <div class="container__info">
                 <p>
-                    CLAARAN
+                    CLAARAN 
                 </p>
                 <p>
                     Av. cra 86 # 55A - 75 Ofi. 106  <br>
@@ -54,11 +53,12 @@
                     <input class="cont  formainer__input" type="text" id="email" formControlName="email">
                 </div>
                 <div class="container__input">
-
-                    <input class="cont  formainer__button" type="submit">
+                    <button (click)="onSubmit($event)">
+                        enviar
+                    </button>
                 </div>
 
-            </form>
+            </form>f
 
         </div>
 
