@@ -23,16 +23,15 @@ import { provideHttpClient } from '@angular/common/http';
     footerComponent,
     HeaderComponent,
     AboutUsComponent,
-    ServicesComponent,
-    HomeComponent,
-    
+    ServicesComponent
+
   ],
   imports: [
     CommonModule,
     WebsiteRoutingModule,
     ReactiveFormsModule,
-    
-  ], 
+
+  ],
    providers: [
     provideHttpClient()
    ]

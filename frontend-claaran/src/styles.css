@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
@@ -11,27 +10,27 @@
 .header-container{
     display: flex;
     align-items: center;
-    padding: 1rem;  
+    padding: 1rem;
   }
   .img-logo {
     width: 200px;
   }
-  
+
   .menu {
     flex-basis: 100%;
   }
-  
-  
+
+
   /* Oculta la lista del menú por defecto */
   .menu-list {
     display: none;
   }
-  
+
   /* Muestra la lista del menú cuando el checkbox está marcado */
   .menu-toggle:checked ~ .menu-list {
     display: block;
   }
-  
+
   /* Oculta el input asociado al label que despliega el icono del menu hamburguesa */
   .visually-hidden {
     position: absolute;
@@ -43,7 +42,7 @@
     padding: 0;
     border: 0;
   }
-  
+
   /* Estilos generales del menú */
   .menu {
     display: flex;
@@ -68,19 +67,19 @@
     gap: 0;
     width: 100%;
   }
-  
+
   .menu-item {
     background: white;
     padding: .5rem 1.6rem;
     border-bottom: 1px solid #42a5ff;
     text-align: center;
   }
-  
+
   .menu-list .menu-item a {
     display: block;
     text-decoration: none;
   }
-  
+
   /* .sub-menu .menu-item {
       border: 1px dotted blue;
       box-sizing: border-box;
@@ -88,18 +87,18 @@
   .sub-menu .menu-item .sub-menu {
      background-color: orange;
   } */
-  
+
   /* Estilos para dispositivos móviles */
   @media screen and (max-width: 767px) {
     /* Disposición vertical */
-    
+
     .menu {
       flex-direction: column;
     }
-    
+
     /* Estilos para el botón de menú */
-  
-    
+
+
     .menu-list {
       display: none;
       overflow: auto;
@@ -108,23 +107,23 @@
       justify-content: flex-start;
       align-items: stretch;
     }
-    
+
     .menu-toggle:checked ~ .menu-list {
       display: flex;
     }
-    
+
     /* Estilos para submenús */
     .sub-menu {
       display: none;
     }
-    
+
     .menu-item:hover .sub-menu {
       display: flex;
       flex-direction: column;
       position: static;
     }
   }
-  
+
   /* Estilos para dispositivos de escritorio */
   @media screen and (min-width: 768px) {
     /* Disposición horizontal */
@@ -138,13 +137,13 @@
       justify-content: end;
       align-items: center;
     }
-    
+
     /* Estilos para el botón de menú */
     .menu-toggle {
       display: none;
     }
-    
-  
+
+
     .menu-list {
       display: flex;
       flex-direction: row;
@@ -152,12 +151,12 @@
       align-items: center;
       top: auto;
     }
-  
+
     .menu-item {
       background: white;
       border-bottom: 1px solid white;
     }
-    
+
     /* Estilos para submenús */
     .sub-menu {
       position: absolute;
@@ -165,7 +164,7 @@
       display: none;
       padding: 0;
     }
-    
+
     .menu-item:hover .sub-menu {
       display: flex;
       flex-direction: column;
@@ -179,7 +178,7 @@
       padding: 0;
       box-sizing: border-box;
   }
-  
+
   .header {
       display: flex;
       align-items: center;
@@ -191,7 +190,7 @@
       position: fixed;
       top: 0;
   }
-  
+
   .menu-principal {
       justify-content: stretch;
       display: flex;
@@ -199,8 +198,8 @@
       gap: 5rem;
       padding-right: 5rem;
   }
-  
-  
+
+
   /* main */
   /* main: section.back-img */
   .back-img {
@@ -215,7 +214,7 @@
   .go-login {
       color: white;
   }
-  .btn-login, 
+  .btn-login,
   .btn-access-now {
       background-color: #42A5FF;
       color: black;
@@ -231,7 +230,7 @@
       width: 6rem;
   }
   /* main: section.section-about*/
-  
+
   section.section-about {
       display: flex;
       flex-direction: column;
@@ -240,7 +239,7 @@
       position: relative;
       /* width: 100vw; */
   }
-  
+
   .content-about {
       background: #42A5FF;
       padding: 2.6rem 1.2rem 1.2rem 1.2rem;
@@ -263,22 +262,22 @@
       height: auto;
       padding: 50px;
   }
-  
+
   section.section-servicios {
       padding: 0 1rem;
-  } 
+  }
   .section-servicios h2 {
       text-align: center;
       margin: 1rem 0;
   }
-  
+
   .servicios {
       text-align: center;
       display: flex;
       flex-direction: column;
       gap: 1rem;
   }
-  
+
   @media (min-width: 768px) {
       section.section-about {
           width: 92%;
@@ -310,7 +309,7 @@
   /* main: final */
   /* mediaqueries del header */
   @media screen and (min-width: 768px) {
-  
+
       .header {
           display: flex;
           align-items: center;
@@ -333,25 +332,25 @@
           gap: 5rem;
           padding-right: 5rem;
         }
-      
+
       .logo-claaran{
           width: 200px;
-          
+
       }
-      
-      
-      
+
+
+
       .link-menu{
           font-family: ProximaNova;
           font-size: 1.2rem;
           text-decoration:  none;
           color: #42A5FF;
-        
-          
+
+
       }
-      
-     
-      
+
+
+
       .a {
           background-color: blueviolet;
           color: white;
@@ -361,9 +360,9 @@
           height: 8vw;
           font-size: x-large;
       }
-      
-  
-      
+
+
+
       .general {
           /* background: black; */
           height: 100vh;
@@ -371,7 +370,7 @@
           align-items: center;
           justify-content: center;
       }
-      
+
       .hr {
           border: #42A5FF;
           height: 2px;
@@ -382,20 +381,20 @@
           height: 28rem;
           padding: 2rem 7rem 2rem 8rem;
       }
-      
-      
+
+
       .about-image {
           width: 20rem;
           height: 20rem;
       }
-      
+
       .about-image img {
           width: 24rem;
           position: absolute;
           margin: 2rem -8rem;
-      
+
       }
-      
+
       .servicios{
           align-items: center;
           justify-content: center;
@@ -404,16 +403,16 @@
           flex-direction: row;
           gap: 1rem;
       }
-      
+
       .servicios {
           justify-content: center;
           padding: 0rem 0rem 8rem 0rem;
       }
-      
+
       .btn {
           background-color: #42A5FF;
       }
-      
+
       .container-footer {
           display: flex;
           flex-direction: row;
@@ -423,42 +422,42 @@
           bottom: 0;
           width: 100vw;
       }
-      
-      
+
+
       .container__info {
           padding: 2rem 0;
       }
-      
+
       .fa-brands {
           display: block;
           font-size: 34px;
-      
+
       }
-      
+
       .container__RedesSociales {
           padding: 1rem 0;
           gap: 15px;
           display: flex;
       }
-      
+
       form {
           flex-direction: column;
           display: flex;
       }
-      
+
       .container__input {
           margin-bottom: 1rem;
       }
-      
+
       .container__input {
           display: flex;
           justify-content: right;
           gap: 10px;
-          }  
+          }
   }
-  
+
   @media screen and (min-width: 1024px) {
-  
+
       .header {
           display: flex;
           align-items: center;
@@ -481,23 +480,23 @@
           gap: 5rem;
           padding-right: 5rem;
         }
-      
+
       .logo-claaran{
           width: 200px;
-          
+
       }
-      
-      
-      
+
+
+
       .link-menu{
           font-family: ProximaNova;
           font-size: 1.2rem;
           text-decoration:  none;
           color: #42A5FF;
-        
-          
+
+
       }
-      
+
       .a {
           background-color: blueviolet;
           color: white;
@@ -507,10 +506,10 @@
           height: 8vw;
           font-size: x-large;
       }
-      
-  
-      
-      
+
+
+
+
       .general {
           /* background: black; */
           height: 100vh;
@@ -518,7 +517,7 @@
           align-items: center;
           justify-content: center;
       }
-      
+
       .hr {
           border: #42A5FF;
           height: 2px;
@@ -528,33 +527,33 @@
       .about {
           padding: 2rem 7rem 2rem 8rem;
       }
-      
-      
+
+
       .about-image {
           width: 20rem;
           height: 20rem;
       }
-      
+
       .about-image img {
           width: 24rem;
           position: absolute;
           margin: 2rem -8rem;
-      
+
       }
-      
+
       .servicios{
           align-items: center;
           justify-content: center;
           align-content: center;
           text-align: center;
           padding: 0rem 0rem 8rem 0rem;
-  
+
       }
-  
+
       .btn {
           background-color: #42A5FF;
       }
-      
+
       .container-footer {
           display: flex;
           flex-direction: row;
@@ -564,39 +563,39 @@
           bottom: 0;
           width: 100vw;
       }
-      
-      
+
+
       .container__info {
           padding: 2rem 0;
       }
-      
+
       .fa-brands {
           display: block;
           font-size: 34px;
-      
+
       }
-      
+
       .container__RedesSociales {
           padding: 1rem 0;
           gap: 15px;
           display: flex;
       }
-      
+
       form {
           flex-direction: column;
           display: flex;
       }
-      
+
       .container__input {
           margin-bottom: 1rem;
       }
-      
+
       .container__input {
           display: flex;
           justify-content: right;
           gap: 10px;
           }
-      
+
   }
 /* header */
 .header {
@@ -635,7 +634,7 @@
 .go-login {
     color: white;
 }
-.btn-login, 
+.btn-login,
 .btn-access-now {
     background-color: #42A5FF;
     color: black;
@@ -686,7 +685,7 @@ section.section-about {
 
 section.section-servicios {
     padding: 0 1rem;
-} 
+}
 .section-servicios h2 {
     text-align: center;
     margin: 1rem 0;
@@ -753,25 +752,25 @@ section.section-servicios {
         gap: 5rem;
         padding-right: 5rem;
       }
-    
+
     .logo-claaran{
         width: 200px;
-        
+
     }
-    
-    
-    
+
+
+
     .link-menu{
         font-family: ProximaNova;
         font-size: 1.2rem;
         text-decoration:  none;
         color: #42A5FF;
-      
-        
+
+
     }
-    
-   
-    
+
+
+
     .a {
         background-color: blueviolet;
         color: white;
@@ -781,9 +780,9 @@ section.section-servicios {
         height: 8vw;
         font-size: x-large;
     }
-    
 
-    
+
+
     .general {
         /* background: black; */
         height: 100vh;
@@ -791,7 +790,7 @@ section.section-servicios {
         align-items: center;
         justify-content: center;
     }
-    
+
     .hr {
         border: #42A5FF;
         height: 2px;
@@ -802,20 +801,20 @@ section.section-servicios {
         height: 28rem;
         padding: 2rem 7rem 2rem 8rem;
     }
-    
-    
+
+
     .about-image {
         width: 20rem;
         height: 20rem;
     }
-    
+
     .about-image img {
         width: 24rem;
         position: absolute;
         margin: 2rem -8rem;
-    
+
     }
-    
+
     .servicios{
         align-items: center;
         justify-content: center;
@@ -824,16 +823,16 @@ section.section-servicios {
         flex-direction: row;
         gap: 1rem;
     }
-    
+
     .servicios {
         justify-content: center;
         padding: 0rem 0rem 8rem 0rem;
     }
-    
+
     .btn {
         background-color: #42A5FF;
     }
-    
+
     .container-footer {
         display: flex;
         flex-direction: row;
@@ -843,38 +842,38 @@ section.section-servicios {
         bottom: 0;
         width: 100vw;
     }
-    
-    
+
+
     .container__info {
         padding: 2rem 0;
     }
-    
+
     .fa-brands {
         display: block;
         font-size: 34px;
-    
+
     }
-    
+
     .container__RedesSociales {
         padding: 1rem 0;
         gap: 15px;
         display: flex;
     }
-    
+
     form {
         flex-direction: column;
         display: flex;
     }
-    
+
     .container__input {
         margin-bottom: 1rem;
     }
-    
+
     .container__input {
         display: flex;
         justify-content: right;
         gap: 10px;
-        }  
+        }
 }
 
 @media screen and (min-width: 1024px) {
@@ -890,7 +889,7 @@ section.section-servicios {
         position: fixed;
         top: 0;
         z-index: 2;
-        
+
     }
     .fuente {
         font-family: ProximaNova;
@@ -902,23 +901,23 @@ section.section-servicios {
         gap: 5rem;
         padding-right: 5rem;
       }
-    
+
     .logo-claaran{
         width: 200px;
-        
+
     }
-    
-    
-    
+
+
+
     .link-menu{
         font-family: ProximaNova;
         font-size: 1.2rem;
         text-decoration:  none;
         color: #42A5FF;
-      
-        
+
+
     }
-    
+
     .a {
         background-color: blueviolet;
         color: white;
@@ -928,10 +927,10 @@ section.section-servicios {
         height: 8vw;
         font-size: x-large;
     }
-    
 
-    
-    
+
+
+
     .general {
         /* background: black; */
         height: 100vh;
@@ -939,7 +938,7 @@ section.section-servicios {
         align-items: center;
         justify-content: center;
     }
-    
+
     .hr {
         border: #42A5FF;
         height: 2px;
@@ -949,20 +948,20 @@ section.section-servicios {
     .about {
         padding: 2rem 7rem 2rem 8rem;
     }
-    
-    
+
+
     .about-image {
         width: 20rem;
         height: 20rem;
     }
-    
+
     .about-image img {
         width: 24rem;
         position: absolute;
         margin: 2rem -8rem;
-    
+
     }
-    
+
     .servicios{
         align-items: center;
         justify-content: center;
@@ -975,7 +974,7 @@ section.section-servicios {
     .btn {
         background-color: #42A5FF;
     }
-    
+
     .container-footer {
         display: flex;
         flex-direction: row;
@@ -985,45 +984,45 @@ section.section-servicios {
         bottom: 0;
         width: 100vw;
     }
-    
-    
+
+
     .container__info {
         padding: 2rem 0;
     }
-    
+
     .fa-brands {
         display: block;
         font-size: 34px;
-    
+
     }
-    
+
     .container__RedesSociales {
         padding: 1rem 0;
         gap: 15px;
         display: flex;
     }
-    
+
     form {
         flex-direction: column;
         display: flex;
     }
-    
+
     .container__input {
         margin-bottom: 1rem;
     }
-    
+
     .container__input {
         display: flex;
         justify-content: right;
         gap: 10px;
         }
-    
+
 }
 
 
 /* Footer */
 .contenedor {
-    
+
     display: flex;
     flex-direction: column;
     padding: 0 1rem;
@@ -1161,7 +1160,7 @@ input.container__button {
 }
 
 @media screen and (min-width: 1024px) {
-   
+
     .contenedor {
         display: flex;
         flex-direction: row;
@@ -1213,20 +1212,5 @@ input.container__button {
         border-radius: 9px;
         margin: 0 auto;
     }
-    
+
 }
-=======
-@font-face {
-    font-family: 'Montserrat-Regular';
-    src: url(/public/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
-}
-small.error {
-    font-family: 'Montserrat-Regular';
-    position: absolute;
-    font-size: 14px;
-    color: red;
-    margin: 0;
-    padding: 0;
-    height: 14px;
-}
->>>>>>> 0aab7c4afba4b6bc3fc51699c6c1d7a6c154fa88
