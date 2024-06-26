@@ -8,16 +8,18 @@ import { AdministrationModule } from './administration/administration.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HomeComponent } from './website/pages/home/home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WebsiteModule,
+    // WebsiteModule,
     AdministrationModule,
     RouterModule,
     ReactiveFormsModule
