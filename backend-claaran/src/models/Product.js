@@ -1,10 +1,11 @@
 const { Schema, model } = require( 'mongoose' );
 
 const ProductSchema = new Schema ({
+
     PosArancelId :{
         type: String,
         required: true,
-        unique: true
+        /* unique: true */
     },
     PosArancelArancel: {
         type: Number, 
@@ -13,17 +14,35 @@ const ProductSchema = new Schema ({
     posArancelIva: {
         type: Number, 
         required: true
+    },  
+    producto: {
+        type: String, 
+        required: true
     },
-   /*  posDescripcion :{
-        type: String, 
+    marca:{
+        type: String,
         required: true
-    }, */
-    entidad: {
-        type: String, 
+    },
+    modelo:{
+        type: String,
         required: true
-    }}, {
+    },
+    referencia:{
+        type: String,
+        required: true
+    },
+    serial:{
+        type: String,
+        required: true
+    },
+    uso:{
+        type: String,
+        required: true
+    }
+    }, {
         timestamps: true
-     });
+    }
+);
 
 const ProductModel = model('Product', ProductSchema);
 

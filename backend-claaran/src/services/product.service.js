@@ -16,6 +16,9 @@ async function obtenerUnProductoPorPosArancelId( posArancelId ) {
     return await ProductModel.findOne({ PosArancelId: posArancelId });
 }
 
+// async function obtenerUnProductoPorReferencia( referenciaId ) {
+//     return await ProductModel.find(referenciaId => referenciaId );
+// }
 
 async function actualizarUnProductoCompleto( _id, dataActualizada ) {
     return await ProductModel.findOneAndUpdate(
@@ -25,12 +28,10 @@ async function actualizarUnProductoCompleto( _id, dataActualizada ) {
     );
 }
 
-
-
 module.exports = {
     insertarProducto,
     obtenerProductos,
     obtenerUnProductoPorId,
     actualizarUnProductoCompleto,
-    obtenerUnProductoPorPosArancelId
+    obtenerUnProductoPorPosArancelId,
 }

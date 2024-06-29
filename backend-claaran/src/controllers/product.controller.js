@@ -1,8 +1,9 @@
-const { insertarProducto, obtenerProductos, obtenerUnProductoPorId, actualizarUnProductoCompleto, obtenerUnProductoPorPosArancelId } = require("../services/product.service");
+const { insertarProducto, obtenerProductos, obtenerUnProductoPorId, actualizarUnProductoCompleto, obtenerUnProductoPorPosArancelId, obtenerUnProductoPorReferencia } = require("../services/product.service");
 
 
 async function createProduct (req, res){
     const product = req.body;
+
     try {
 
         const newProduct = await insertarProducto(product)
@@ -66,6 +67,17 @@ async function getProductByArancelId(req, res){
         })
     }
 }
+async function getProductByReference (req, res){
+    const arancel = req.params.PosArancelId;
+
+    const product = product.find(product => product.PosArancelId === arancel)
+    
+    if(arancel) {
+        res.json(arancel)
+    } else {
+        res.status(404).json({msg: 'error'})
+    }
+}
 
 
 async function updateProductComplete (req, res){
@@ -91,5 +103,6 @@ module.exports={
     getAllProducts,
     getProductById,
     updateProductComplete,
-    getProductByArancelId
+    getProductByArancelId,
+    getProductByReference
 }
