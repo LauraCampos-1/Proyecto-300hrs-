@@ -15,7 +15,7 @@ h3{
     width: 40%;
     margin: 0 auto;
     display: block;
-    background-color: #87CEFA;
+    /* background-color: #87CEFA; */
     margin-top: 1rem;
     margin-block-end: 1rem;
     border-radius: 1rem;
@@ -36,7 +36,7 @@ label {
     width: 40%;
     margin: 0 auto;
     display: block;
-    background-color: #87CEFA;
+    /* background-color: #87CEFA; */
     margin-top: 1rem;
     margin-block-end: 1rem;
     border-radius: 1rem;

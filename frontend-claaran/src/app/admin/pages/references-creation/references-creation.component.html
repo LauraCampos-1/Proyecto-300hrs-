@@ -1,13 +1,17 @@
+<div class="contenedor">
+    <label for="" class="label label-products">Referencia</label>
+    <input  (keydown)="getDataByQuery()" type="text" class="form-control" [formControl]="ref" >
+</div>
 
 <form
     action="" class="form form-product"
     [formGroup]="CreacionDeReferencias"
     (ngSubmit)="onSubmit()"
 >
-<div class="contenedor">
+<!-- <div class="contenedor">
     <label for="" class="label label-products">Referencia</label>
-    <input type="text" class="form-control" formControlName="ref" >
-</div>
+    <input  (keydown)="getDataByQuery()" type="text" class="form-control" formControlName="ref" >
+</div> -->
 
 <div class="contenedor">
     <label for="" class="label label-products">Sub partida arancelaria</label>

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { debounceTime } from 'rxjs';
+import { CreacionDeReferenciasService } from '../../../services/creacion-de-referencias.service';
 
 @Component({
   selector: 'admin-references-creation',
@@ -9,9 +11,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReferencesCreationComponent {
   CreacionDeReferencias!: FormGroup;
   @Output()  registroCreado = new EventEmitter<any>();
-  constructor  (){
+  constructor  (private referenciaService: CreacionDeReferenciasService){
     this.CreacionDeReferencias = new FormGroup({
-    ref: new FormControl('',[Validators.required]),
+    // ref: new FormControl('',[Validators.required]),
     subarancel: new FormControl('',[Validators.required]),
     arancel: new FormControl('',[Validators.required]),
     iva: new FormControl('',[Validators.required]),
@@ -23,6 +25,8 @@ export class ReferencesCreationComponent {
     usod: new FormControl('',[Validators.required]),
  })
 }
+
+ref = new FormControl()
 
 ngOnInit():void{}
 
@@ -36,4 +40,34 @@ ngOnInit():void{}
       this.registroForm.reset(); */
     /* ) */
   }
+
+  getDataByQuery() {
+    this.ref.valueChanges
+    .pipe(
+      debounceTime(1500)
+    )
+    .subscribe(query => {
+      this.referenciaService.getProductByRef(query).subscribe((data) => {
+        console.log(data)
+        const product = data.data
+        this.CreacionDeReferencias.setValue({
+          arancel: product.PosArancelId,
+          subarancel: product.PosArancelArancel,
+          iva: product.posArancelIva,
+          producto: product.producto,
+          marca: product.marca,
+          modelo: product.modelo,
+          referencia: product.referencia,
+          serial: product.serial,
+          usod: product.uso
+        })
+       })
+    })
+  }
+
+  // getDataByQuery() {
+  //    this.referenciaService.getProductByRef('1234567890').subscribe((data) => {
+  //     console.log(data)
+  //    })
+  // }
 }
