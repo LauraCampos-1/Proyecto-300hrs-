@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { CreacionDeReferenciasService } from '../../../services/creacion-de-referencias.service';
+import { ReferencesCreation } from '../../../services/references-creation.service';
+
 
 @Component({
   selector: 'admin-references-creation',
@@ -11,7 +13,7 @@ import { CreacionDeReferenciasService } from '../../../services/creacion-de-refe
 export class ReferencesCreationComponent {
   CreacionDeReferencias!: FormGroup;
   @Output()  registroCreado = new EventEmitter<any>();
-  constructor  (private referenciaService: CreacionDeReferenciasService){
+  constructor  (private referenciaService: CreacionDeReferenciasService, private referenceCreation:ReferencesCreation ){
     this.CreacionDeReferencias = new FormGroup({
     // ref: new FormControl('',[Validators.required]),
     subarancel: new FormControl('',[Validators.required]),
@@ -30,16 +32,7 @@ ref = new FormControl()
 
 ngOnInit():void{}
 
-  onSubmit(): void {
-  console.log(this.CreacionDeReferencias.value)
-/*     const datos = this.registroForm.value;
-    this.dataService.guardarRegistro(datos).subscribe( data=>
-      console.log(data);
 
-      this.registroCreado.emit(data);
-      this.registroForm.reset(); */
-    /* ) */
-  }
 
   getDataByQuery() {
     this.ref.valueChanges
@@ -65,9 +58,19 @@ ngOnInit():void{}
     })
   }
 
-  // getDataByQuery() {
-  //    this.referenciaService.getProductByRef('1234567890').subscribe((data) => {
-  //     console.log(data)
-  //    })
-  // }
+  onSubmit(): void {
+    console.log(this.CreacionDeReferencias.value)
+
+      const datos = this.CreacionDeReferencias.value;
+
+      this.referenciaService.postRegister(datos).subscribe( data => {
+        console.log(data);
+  
+  /*       this.registroCreado.emit(data); */
+        /* this.CreacionDeReferencias.reset(); */
+      }) 
+
+    }
+
+
 }

@@ -13,6 +13,9 @@ export class CreacionDeReferenciasService {
   sendDataClient(data:any){
     return this.http.post<any>(`http://localhost:3001/api/products`,data  )
   }
+  postRegister( newReference:any){
+    return this.http.post<any>('http://localhost:3001/api/products', newReference)
+  }
 
   getProductByRef(arancelId: string) {
     return this.http.get<any>(`http://localhost:3001/api/products/paid/${arancelId}`)
