@@ -10,6 +10,8 @@ import { CreditsComponent } from './pages/credits/credits.component';
 import { FooterComponent } from '../components/layout/footer/footer.component';
 import { NavbarComponent } from '../components/layout/navbar/navbar.component';
 import { OurServicesComponent } from './pages/our-services/our-services.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { HeaderComponent } from '../components/layout/header/header.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { OurServicesComponent } from './pages/our-services/our-services.componen
     CreditsComponent,
     NavbarComponent,
     FooterComponent,
-    OurServicesComponent
+    OurServicesComponent,
+    AboutUsComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
