@@ -20,4 +20,10 @@ export class CreacionDeReferenciasService {
   getProductByRef(arancelId: string) {
     return this.http.get<any>(`http://localhost:3001/api/products/paid/${arancelId}`)
   }
+
+  updateProductByRef( ref: string, updatedProduct: any ) {
+    return this.http.patch( `http://localhost:3001/api/products/reference/${ref}`, updatedProduct )
+  }
+
+
 }

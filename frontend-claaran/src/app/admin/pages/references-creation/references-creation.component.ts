@@ -15,6 +15,7 @@ export class ReferencesCreationComponent {
   CreacionDeReferencias!: FormGroup;
   @Output()  registroCreado = new EventEmitter<any>();
   autorizaRegistro: boolean = false;
+  autorizaActualizar: boolean = false;
   
   constructor  (private referenciaService: CreacionDeReferenciasService, private referenceCreation:ReferencesCreation ){
     this.CreacionDeReferencias = new FormGroup({
@@ -62,11 +63,14 @@ ngOnInit():void{}
             serial: product?.serial,
             uso: product?.uso
           })
+
+          this.autorizaActualizar = true;
         }
         else {
           this.autorizaRegistro = true;
 
           this.CreacionDeReferencias.reset();
+          this.autorizaActualizar = true;
         }
 
         
@@ -75,25 +79,39 @@ ngOnInit():void{}
   }
 
   onSubmit(): void {
+
     if( this.autorizaRegistro ) {
-      
-      console.log('Registre' );
-
-
-      this.referenciaService.postRegister( this.CreacionDeReferencias.value ).subscribe( data => {
-        console.log(data);
-
-        this.CreacionDeReferencias.reset();
-        this.autorizaRegistro = false;
-  /*       this.registroCreado.emit(data); */
-        /* this.CreacionDeReferencias.reset(); */
-      }) 
+      /** REGISTRA UN PRODUCTO */
+      if( this.autorizaRegistro ) {
+  
+        this.referenciaService.postRegister( this.CreacionDeReferencias.value ).subscribe( data => {
+          console.log(data);
+  
+          this.CreacionDeReferencias.reset();
+          this.autorizaRegistro = false;
+    /*       this.registroCreado.emit(data); */
+          /* this.CreacionDeReferencias.reset(); */
+        }) 
+      }
+      else {
+        console.log( 'No registramos nada' );
+      }
     }
-    else {
-      console.log( 'No registramos nada' );
+
+    if( this.autorizaActualizar ) {
+      const ref = this.CreacionDeReferencias.value.referencia;
+
+
+      /** ACTUALIZA UN PRODUCTO */
+      this.referenciaService.updateProductByRef( ref, this.CreacionDeReferencias.value ).subscribe( data => {
+        console.log( data )
+      })
+
     }
 
-    console.log(this.CreacionDeReferencias.value)
+
+    
+
 
     
 
