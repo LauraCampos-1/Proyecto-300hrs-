@@ -28,10 +28,21 @@ async function actualizarUnProductoCompleto( _id, dataActualizada ) {
     );
 }
 
+async function buscarProductoPorRef( referencia ) {
+    return await ProductModel.findOne({ referencia });
+}
+
+
+async function actualizarUnProductoPorID( id, productoActualizado ) {
+    return await ProductModel.findOneAndUpdate( id, productoActualizado, { new: true } );
+}
+
 module.exports = {
     insertarProducto,
     obtenerProductos,
     obtenerUnProductoPorId,
     actualizarUnProductoCompleto,
     obtenerUnProductoPorPosArancelId,
+    buscarProductoPorRef,
+    actualizarUnProductoPorID
 }

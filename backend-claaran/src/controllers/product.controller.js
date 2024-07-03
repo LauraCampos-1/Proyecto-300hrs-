@@ -1,4 +1,5 @@
-const { insertarProducto, obtenerProductos, obtenerUnProductoPorId, actualizarUnProductoCompleto, obtenerUnProductoPorPosArancelId, obtenerUnProductoPorReferencia } = require("../services/product.service");
+const ProductModel = require("../models/Product");
+const { insertarProducto, obtenerProductos, obtenerUnProductoPorId, actualizarUnProductoCompleto, obtenerUnProductoPorPosArancelId, obtenerUnProductoPorReferencia, actualizarUnProductoPorReferencia, buscarProductoPorRef, actualizarUnProductoPorID } = require("../services/product.service");
 
 
 async function createProduct (req, res){
@@ -53,14 +54,28 @@ async function getProductById (req, res){
 
 async function getProductByArancelId(req, res){
     const id = req.params.id;
+
+    
+
     try {
         const data = await obtenerUnProductoPorPosArancelId( id );
+        
+        console.log( '>>>>> CONSULTO <<<<<', data );
+
+        if( data == null ) {
+            return res.json({
+                ok: false,
+                msg:'El producto por referencia no existe'
+            });
+        }
+
         res.json({
-            ok:true,
+            ok: true,
             data
         }) 
     } catch (error) {
         console.error(error)
+
         res.json({
             ok:false,
             msg:'Error al obtener un producto por su ArancelID'
@@ -73,9 +88,15 @@ async function getProductByReference (req, res){
     const product = product.find(product => product.PosArancelId === arancel)
     
     if(arancel) {
-        res.json(arancel)
+        res.json({
+            ok: true,
+            data: product
+        })
     } else {
-        res.status(404).json({msg: 'error'})
+        res.status(404).json({
+            ok: false,
+            msg: 'error'
+        })
     }
 }
 
@@ -98,11 +119,37 @@ async function updateProductComplete (req, res){
     }
 }
 
+
+async function actualizarProductoPorReferencia(req,res) {
+    const referencia = req.params.id;
+    const productoActualizado = req.body;
+
+
+    try {
+        const foundProductByRef = await buscarProductoPorRef( referencia );
+
+        const updatedProductById = await actualizarUnProductoPorID( foundProductByRef._id, productoActualizado );
+
+        res.json({
+            ok: true,
+            data: updatedProductById
+        }) 
+    } catch (error) {
+        console.error(error)
+        res.json({
+            ok:false,
+            msg:'El producto no pudo actualizar por referencia'
+        })
+    }
+
+}
+
 module.exports={
     createProduct,
     getAllProducts,
     getProductById,
     updateProductComplete,
     getProductByArancelId,
-    getProductByReference
+    getProductByReference,
+    actualizarProductoPorReferencia
 }

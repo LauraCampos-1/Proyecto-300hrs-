@@ -29,7 +29,8 @@ const ProductSchema = new Schema ({
     },
     referencia:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     serial:{
         type: String,
