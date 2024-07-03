@@ -11,20 +11,23 @@ import { ReferencesCreation } from '../../../services/references-creation.servic
   styleUrl: './references-creation.component.css'
 })
 export class ReferencesCreationComponent {
+  
   CreacionDeReferencias!: FormGroup;
   @Output()  registroCreado = new EventEmitter<any>();
+  autorizaRegistro: boolean = false;
+  
   constructor  (private referenciaService: CreacionDeReferenciasService, private referenceCreation:ReferencesCreation ){
     this.CreacionDeReferencias = new FormGroup({
     // ref: new FormControl('',[Validators.required]),
-    subarancel: new FormControl('',[Validators.required]),
-    arancel: new FormControl('',[Validators.required]),
-    iva: new FormControl('',[Validators.required]),
+    PosArancelId: new FormControl('',[Validators.required]),
+    PosArancelArancel: new FormControl(0,[Validators.required]),
+    posArancelIva: new FormControl(0,[Validators.required]),
     producto: new FormControl('',[Validators.required]),
     marca: new FormControl('',[Validators.required]),
     modelo: new FormControl('',[Validators.required]),
     referencia: new FormControl('',[Validators.required]),
     serial: new FormControl('',[Validators.required]),
-    usod: new FormControl('',[Validators.required]),
+    uso: new FormControl('',[Validators.required]),
  })
 }
 
@@ -42,33 +45,57 @@ ngOnInit():void{}
     .subscribe(query => {
       this.referenciaService.getProductByRef(query).subscribe((data) => {
         console.log(data)
-        const product = data.data
-        this.CreacionDeReferencias.setValue({
-          arancel: product.PosArancelId,
-          subarancel: product.PosArancelArancel,
-          iva: product.posArancelIva,
-          producto: product.producto,
-          marca: product.marca,
-          modelo: product.modelo,
-          referencia: product.referencia,
-          serial: product.serial,
-          usod: product.uso
-        })
+
+
+        if( data.ok ) {
+          this.autorizaRegistro = false;
+
+          const product = data.data
+          this.CreacionDeReferencias.setValue({
+            PosArancelId: product?.PosArancelId,
+            PosArancelArancel: product?.PosArancelArancel,
+            posArancelIva: product?.posArancelIva,
+            producto: product?.producto,
+            marca: product?.marca,
+            modelo: product?.modelo,
+            referencia: product?.referencia,
+            serial: product?.serial,
+            uso: product?.uso
+          })
+        }
+        else {
+          this.autorizaRegistro = true;
+
+          this.CreacionDeReferencias.reset();
+        }
+
+        
        })
     })
   }
 
   onSubmit(): void {
-    console.log(this.CreacionDeReferencias.value)
+    if( this.autorizaRegistro ) {
+      
+      console.log('Registre' );
 
-      const datos = this.CreacionDeReferencias.value;
 
-      this.referenciaService.postRegister(datos).subscribe( data => {
+      this.referenciaService.postRegister( this.CreacionDeReferencias.value ).subscribe( data => {
         console.log(data);
-  
+
+        this.CreacionDeReferencias.reset();
+        this.autorizaRegistro = false;
   /*       this.registroCreado.emit(data); */
         /* this.CreacionDeReferencias.reset(); */
       }) 
+    }
+    else {
+      console.log( 'No registramos nada' );
+    }
+
+    console.log(this.CreacionDeReferencias.value)
+
+    
 
     }
 
