@@ -1,13 +1,18 @@
-const { sign } = require("jsonwebtoken");
+const { sign, verify } = require('jsonwebtoken');
 
-const generateToken = (payload)=>{
+
+const generateToken = (payload) => {
+
     return sign(
-        payload,
-        process.env.SECRET_JWT_SEED,
-        {expiresIn: '1h'}
-    )
+        payload, process.env.SECRET_JWT_SEED, {expiresIn: '1h'}
+    );
+}
+
+const validateToken = (token) => {
+    return verify(token, process.env.SECRET_JWT_SEED);
 }
 
 module.exports = {
-    generateToken
+    generateToken,
+    validateToken
 }

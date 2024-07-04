@@ -1,103 +1,103 @@
-const { compareSync } = require("bcrypt");
-const { findUserByUsername, registerUser } = require("../services/auth.service");
-const { generateToken } = require("../helpers/jwt.helper");
-const RoleModel = require("../models/Role");
+const { compareSync } = require('bcrypt');
+
+const UserModel = require('../models/User');
+const { findUserByUsername, registerUser, getOneUserById } = require('../services/auth.service');
+const { generateToken } = require('../helpers/jwt.helper');
 
 
+const register = async(req, res) => {
 
+    const {username} = req.body;
+    const userFound = await findUserByUsername(username);
 
-async function login(req, res){
-    const inputData = req.body
-    try {
-        const userFound = await findUserByUsername(inputData.email);
-        console.log(userFound)
-
-        if(! userFound){
-            return res.json({
-                ok: false,
-                msg:'Error porfavor registrese'
-            })
-        }
-        const isValiedPassword = compareSync(inputData.password, userFound.password);
-
-        if( ! isValiedPassword){
-            res.json({
-                ok: false,
-                msg: 'password invalido'
-            })
-        }
-        const userData = userFound.toObject();
-        delete userData.password
-
-        console.log(userData)
-
-
-        const payload = {
-            id: userData._id,
-            username: userData.username,
-            email:userData.email,
-            role: userData.role
-        }
-        const token = generateToken(payload)
-
-        // const token = jwt.sing({id: userFound, username: userFound, email:userFound}, process.env.SECRET_JWT_SEED,)
-        if(inputData){
-            res.json({ok: true, msg:'iniciando sesion', token, user: payload})
-        }
-    } catch (error) {
-        
+    if (userFound){
+        return res.status(200).json({
+            ok: false,
+            msg: 'El usuario ya está registrado.'
+        });
     }
 
+    registerUser(req.body);
+    res.status(200).json({
+        ok: true,
+        msg: 'Registro existoso.'
+    });
 }
-async function register(req, res){
-    const inputData = req.body
 
-    try {
-        const userFound = await findUserByUsername(inputData.email);
-        
-        if(userFound){
-            return res.json({
-                ok: false,
-                msg:'Error al registrar. el usuario ya existe'
-            })
-        }
-        
-        if(req.body.role){
-            const foundRole = await RoleModel.find({name: {$in:req.body.role}})
-            inputData.role = foundRole.map(role => role._id)
-        }else{
-            const role = await RoleModel.findOne({name: "User"})
-            inputData.role = [role._id];
-        }
+const login = async(req, res) => {
 
-        console.log(inputData)
-        const userRegistered = await registerUser(inputData)
-
-
-        const dataRegister = userRegistered.toObject()
-        console.log( dataRegister )
-
-        const payload = {
-            id: dataRegister.id,
-            username: dataRegister.username,
-            email:dataRegister.email,
-            role: dataRegister.role
-        }
-        const token = generateToken(payload);
-
-        res.json({ok: true,msg:'Usuario registrado exitosamente', token })
-
-    } catch (error) {
-    console.error(error)
-    res.json({
-        ok:false,
-        msg:'Error al registrar el usuario'
-    })    
-    }
+    const {username, password} = req.body;
+    const userFound = await findUserByUsername(username);  
     
+    if(! userFound){
+        return res.status(400).json({
+            ok: false,
+            msg: 'El usuario no existe. Por favor, regístrese.'
+        });
+    }
+const validPassword = compareSync (password, userFound.password);
+    if (! validPassword){
+        return res.status(400).json({
+            ok: false,
+            msg: 'Contraseña inválida. Intente nuevamente'
+        });
+    }
+
+const userData = userFound.toObject();
+delete userData.password;
+
+const payload = {...userData}, 
+      token = generateToken(payload);  
+
+     res.status(200).json({
+        ok: true,
+        token
+     });
 }
+
+const getUserById = async (req, res) => {
+    const user_id = req.params.id
+
+    try {
+        const data = await getOneUserById(user_id)
+        res.status(200).json({
+            ok: true,
+            data
+        })
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({
+            ok: false,
+            msg: 'Error al obtener el usuario por id'
+        })
+    }
+}
+const renewToken = (req, res)=> {
+    const userData = req.authUser; 
+    const {id} = userData;
+
+    delete userData.iat;
+    delete userData.exp;
+
+const userFound = UserModel.findById(id);
+    if(! userFound){
+        res.status(400).json({
+            ok: false,
+            msg: 'El usuario no existe; el token no se renovará.'
+        });
+    }
+
+const newToken = generateToken ({...userData})
+        res.status(200).json({
+            ok:true,
+            token: newToken,
+            userData
+        });
+    }
 
 module.exports = {
     login,
-    register
+    register, 
+    renewToken,
+    getUserById
 }

@@ -1,32 +1,33 @@
 const { genSaltSync, hashSync } = require("bcrypt");
 const UserModel = require("../models/User");
 
-async function findUserByUsername(email){
-    return await UserModel.findOne({email}).populate('role')
+
+function registerUser(newUser) {
+    
+    const dbUser = new UserModel(newUser);
+
+    const salt = genSaltSync();
+    dbUser.password = hashSync (newUser.password, salt);
+
+    dbUser.save();
+
 }
 
-async function registerUser(newUser){
+async function findUserByUsername(username) {
+    return await UserModel.findOne({username}, {
 
-    try {
-        const dbUser = new UserModel(newUser);//.populate('role') 
+        createdAt: 0,
+        updatedAt: 0,
+        __v: 0
+    });
+}
 
-        const salt = genSaltSync();
-        dbUser.password =  hashSync( newUser.password, salt);
-        console.log(dbUser)
-        const saveUser = await dbUser.save()
-
-        await saveUser.populate('role').execPopulate();
-
-        console.log('usuario guardado exitosmanete', saveUser)
-
-        return saveUser
-    } catch (error) {
-        console.log(error)
-    }
-
+async function getOneUserById(id) {
+    return await UserModel.findById(id)
 }
 
 module.exports = {
+    registerUser,
     findUserByUsername,
-    registerUser
+    getOneUserById
 }
