@@ -1,5 +1,6 @@
 <form class="footer"
   [formGroup]="footerForm"
+  (ngSubmit)="onSubmit"
 >
     <div class="contenedor">
         <div class="container__contact">
@@ -40,12 +41,12 @@
             <form action="">
                 <div class="container__input">
                     <label for="name">Nombre</label>
-                    <input type="text"  form id="name" formControlName="nombre">
+                    <input type="text"   formControlName="name">
                 </div>
 
                 <div class="container__input">
                     <label for="phone">Telefono</label>
-                    <input type="text"  form id="phone" formControlName="telefono">
+                    <input type="text"   formControlName="phone">
                 </div>
 
                 <div class="container__input">

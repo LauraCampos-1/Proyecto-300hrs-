@@ -1,0 +1,61 @@
+.body {
+    background-color: #42a5ff;
+    margin: 0;
+  }
+  .header{
+    background-color: white;
+  
+  }
+  .logo{
+    width: 16rem;
+    
+  }
+  .aplicacion {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      
+    }
+  
+  .dashboard.aplicacion {
+    flex-direction: column;
+  }
+  @media ( min-width: 768px ) {
+    .dashboard.aplicacion {
+      flex-direction: row;
+    }
+  }
+  
+  .contenedor-admin,
+  .contenedor_clasf, 
+  .contenedor-consul {
+    margin: 0 auto;
+  }
+  
+  .admin, .clasf, .consul, .link{
+      text-decoration: none;
+      list-style: none;
+      border-radius: 10px 100px / 120px;
+  
+  }
+  .link1{
+      background-color: #2f5597;
+      display: block;
+      width: 220px;
+      margin: 2rem auto;
+      padding: .8rem;
+      text-decoration: none;
+      color: white;
+  }
+  .link{
+      background-color: white   ;
+    display: block;
+    width: 220px;
+    margin: 2rem auto;
+    padding: .8rem;
+    text-decoration: none;
+    color: black;
+    
+  }
+  
+  

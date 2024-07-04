@@ -14,8 +14,8 @@ export class FooterComponent {
 
   constructor(private footerService: FooterService){
     this.footerForm = new FormGroup({
-      nombre: new FormControl('',[Validators.required]),
-      telefono: new FormControl('',[Validators.required]),
+      name: new FormControl('',[Validators.required]),
+      phone: new FormControl('',[Validators.required]),
       email: new FormControl('',[Validators.required])
     })
   }
