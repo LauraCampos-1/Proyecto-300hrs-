@@ -23,7 +23,8 @@ import { HeaderComponent } from '../components/layout/header/header.component';
     FooterComponent,
     OurServicesComponent,
     AboutUsComponent,
-    HeaderComponent
+    HeaderComponent,
+    
   ],
   imports: [
     CommonModule,

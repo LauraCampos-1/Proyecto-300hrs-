@@ -29,7 +29,7 @@ export class LoginComponent {
         if(!data.ok) {
           console.log('error al iniciar sesion')
         } else {
-          this.router.navigateByUrl( '/admin' )
+          this.router.navigateByUrl( '/admin/references-creation' )
         }
 
       })
